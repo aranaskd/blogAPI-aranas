@@ -29,6 +29,10 @@ const postSchema = new mongoose.Schema({
                 type: String,
                 required: [true, "User ID is required"]
             },
+            username: {
+                type: String,
+                required: [true, "Username is required"]
+            },
             comment: {
                 type: String,
                 required: [true, "Content is required"]

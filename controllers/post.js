@@ -119,6 +119,7 @@ module.exports.addComment = (req, res) => {
     const userId = req.user.id
     const { postId } = req.params;
     const { comment } = req.body;
+    const username = req.user.username;
 
     return Post.findById(postId)
         .then(post => {
@@ -128,6 +129,7 @@ module.exports.addComment = (req, res) => {
 
             post.comments.push({
                 userId,
+                username,
                 comment
             });
 
